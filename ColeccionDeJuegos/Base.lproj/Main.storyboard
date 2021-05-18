@@ -15,9 +15,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="01f-is-OmV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="01f-is-OmV">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="9oS-kH-d75" detailTextLabel="DFD-22-SLk" style="IBUITableViewCellStyleSubtitle" id="eG8-4n-aFo">
+                                        <rect key="frame" x="20" y="55.5" width="374" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eG8-4n-aFo" id="sDp-0z-rHa">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9oS-kH-d75">
+                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DFD-22-SLk">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -32,7 +59,7 @@
                     <navigationItem key="navigationItem" id="bPd-kl-mBc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aUC-8j-J3y">
                             <connections>
-                                <segue destination="NH2-0k-0Q3" kind="show" id="Z9P-21-zJX"/>
+                                <segue destination="NH2-0k-0Q3" kind="show" identifier="juegoSegue" id="Z9P-21-zJX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -54,6 +81,8 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DeY-KY-68k">
                                 <rect key="frame" x="67" y="120" width="280" height="150"/>
+                                <color key="backgroundColor" red="0.87217250189999995" green="0.93082147879999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="Dt5-QK-gqq"/>
                                     <constraint firstAttribute="height" constant="150" id="y1a-k1-6sC"/>
@@ -64,22 +93,34 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dp1-BR-ICq">
+                                <rect key="frame" x="67" y="332" width="280" height="77"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="h5z-4M-gyi"/>
+                                </constraints>
+                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBA-xL-9GP">
-                                <rect key="frame" x="179.5" y="344" width="55" height="30"/>
+                                <rect key="frame" x="172" y="429" width="70" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" red="0.87217250189999995" green="0.93082147879999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Agregar"/>
                                 <connections>
                                     <action selector="agregarTapped:" destination="NH2-0k-0Q3" eventType="touchUpInside" id="xSh-K7-p6f"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="oBA-xL-9GP" firstAttribute="top" secondItem="Dp1-BR-ICq" secondAttribute="bottom" constant="20" id="8hG-ag-ESg"/>
+                            <constraint firstItem="Dp1-BR-ICq" firstAttribute="top" secondItem="eLg-9v-yQX" secondAttribute="bottom" constant="8" id="FSE-hG-pQS"/>
+                            <constraint firstItem="Dp1-BR-ICq" firstAttribute="leading" secondItem="Upf-JW-zbg" secondAttribute="leading" constant="67" id="IYX-AA-g84"/>
                             <constraint firstItem="eLg-9v-yQX" firstAttribute="width" secondItem="DeY-KY-68k" secondAttribute="width" multiplier="0.114286" constant="248" id="RzV-we-WQM"/>
-                            <constraint firstItem="oBA-xL-9GP" firstAttribute="top" secondItem="eLg-9v-yQX" secondAttribute="bottom" constant="20" id="Sum-YN-Pew"/>
                             <constraint firstItem="DeY-KY-68k" firstAttribute="top" secondItem="Upf-JW-zbg" secondAttribute="top" constant="32" id="Wmo-Ou-YaI"/>
                             <constraint firstItem="DeY-KY-68k" firstAttribute="centerX" secondItem="Ox0-w8-LZt" secondAttribute="centerX" id="cP6-1U-9CR"/>
-                            <constraint firstItem="oBA-xL-9GP" firstAttribute="centerX" secondItem="Ox0-w8-LZt" secondAttribute="centerX" id="h6p-Jm-dZu"/>
+                            <constraint firstItem="Dp1-BR-ICq" firstAttribute="centerX" secondItem="eLg-9v-yQX" secondAttribute="centerX" id="fVs-tP-7ZT"/>
                             <constraint firstItem="eLg-9v-yQX" firstAttribute="centerX" secondItem="DeY-KY-68k" secondAttribute="centerX" id="h7S-BB-QSV"/>
+                            <constraint firstItem="oBA-xL-9GP" firstAttribute="centerX" secondItem="Ox0-w8-LZt" secondAttribute="centerX" id="lFS-nn-2nz"/>
                             <constraint firstItem="eLg-9v-yQX" firstAttribute="top" secondItem="DeY-KY-68k" secondAttribute="bottom" constant="20" id="oow-jL-yLY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Upf-JW-zbg"/>
@@ -100,6 +141,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="JuegoImageView" destination="DeY-KY-68k" id="xtJ-eX-f4y"/>
+                        <outlet property="agregarActualizarBoton" destination="oBA-xL-9GP" id="EL5-wG-hrW"/>
+                        <outlet property="categoria" destination="Dp1-BR-ICq" id="LM7-nS-7B0"/>
                         <outlet property="tituloTextField" destination="eLg-9v-yQX" id="oA5-zy-eee"/>
                     </connections>
                 </viewController>
