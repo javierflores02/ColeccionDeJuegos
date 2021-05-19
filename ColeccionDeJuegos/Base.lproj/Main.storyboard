@@ -57,13 +57,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="bPd-kl-mBc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aUC-8j-J3y">
-                            <connections>
-                                <segue destination="NH2-0k-0Q3" kind="show" identifier="juegoSegue" id="Z9P-21-zJX"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="aUC-8j-J3y">
+                                <connections>
+                                    <segue destination="NH2-0k-0Q3" kind="show" identifier="juegoSegue" id="Z9P-21-zJX"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Editar" id="OW8-RJ-2b9">
+                                <connections>
+                                    <action selector="editar:" destination="BYZ-38-t0r" id="P0y-KV-Cl1"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnEditar" destination="OW8-RJ-2b9" id="oPK-HG-bId"/>
                         <outlet property="tableView" destination="01f-is-OmV" id="oir-8A-rDr"/>
                     </connections>
                 </viewController>

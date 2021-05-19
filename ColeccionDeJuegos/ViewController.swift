@@ -3,6 +3,9 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var btnEditar: UIBarButtonItem!
+    
     var juegos:[Juego]=[]
     
     
@@ -10,8 +13,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.isEditing = false
     }
 
+    @IBAction func editar(_ sender: Any) {
+        tableView.isEditing = !tableView.isEditing
+        btnEditar.title = (tableView.isEditing ? "Hecho" : "Editar")
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do{
@@ -56,6 +66,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             tableView.reloadData()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let objetoMovido = self.juegos[sourceIndexPath.row]
+        juegos.remove(at: sourceIndexPath.row)
+        juegos.insert(objetoMovido, at: destinationIndexPath.row)
     }
 
 }
